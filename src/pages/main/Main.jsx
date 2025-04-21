@@ -10,6 +10,7 @@ const Main = () => {
     const fetchNews = async () => {
       try {
         const response = await getNews();
+        console.log("Fetched data:", response.news);
         setNews(response.news);
       } catch (error) {
         console.log(error);
@@ -20,7 +21,7 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
-      {news.length > 0 ? <NewsBanner item={news[0]} /> : <div>ы</div>}
+      {news.length > 0 ? <NewsBanner item={news[4]} /> : null}
 
       <NewsList news={news} />
     </main>
